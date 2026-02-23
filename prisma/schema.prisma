@@ -1,0 +1,155 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Region {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  imageUrl    String?
+  projects    Project[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Constructor {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  logoUrl  String?
+  phone    String?
+  email    String?
+  projects Project[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  code          String?
+  type          String   @default("Residencial")
+
+  // Location
+  address       String
+  neighborhood  String
+  city          String   @default("São Paulo")
+  state         String   @default("SP")
+  zipCode       String?
+  latitude      Float?
+  longitude     Float?
+
+  // Description
+  description   String?
+  websiteUrl    String?
+
+  // Characteristics
+  areaMin       Float?
+  areaMax       Float?
+  priceMin      Float?
+  pricePerSqm   Float?
+  bedrooms      Int?
+  bedroomsMax   Int?
+  suites        Int?
+  bathrooms     Int?
+  parkingSpots  Int?
+
+  // Features (stored as JSON arrays)
+  condoFeatures String[]
+  unitFeatures  String[]
+
+  // Project Info
+  status        String   @default("Em Construção")
+  stage         String?
+  stock         Int?
+  launchDate    DateTime?
+  deliveryDate  DateTime?
+  floors        Int?
+  unitsPerFloor Int?
+  totalUnits    Int?
+  landArea      Float?
+  registry      String?
+  condoFee      Float?
+  iptu          Float?
+
+  // Flags
+  featured      Boolean  @default(false)
+  published     Boolean  @default(true)
+
+  // Relations
+  regionId      String
+  region        Region       @relation(fields: [regionId], references: [id])
+  constructorId String
+  constructor   Constructor  @relation(fields: [constructorId], references: [id])
+  images        ProjectImage[]
+  floorPlans    FloorPlan[]
+  files         ProjectFile[]
+  typologies    Typology[]
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([regionId])
+  @@index([constructorId])
+  @@index([slug])
+  @@index([status])
+  @@index([featured])
+}
+
+model ProjectImage {
+  id        String  @id @default(cuid())
+  url       String
+  alt       String?
+  order     Int     @default(0)
+  isHero    Boolean @default(false)
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model FloorPlan {
+  id        String  @id @default(cuid())
+  name      String
+  imageUrl  String
+  order     Int     @default(0)
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model ProjectFile {
+  id        String  @id @default(cuid())
+  name      String
+  fileUrl   String
+  fileType  String  @default("pdf")
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model Typology {
+  id           String  @id @default(cuid())
+  name         String
+  area         Float?
+  bedrooms     Int?
+  suites       Int?
+  parkingSpots Int?
+  price        Float?
+  projectId    String
+  project      Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}

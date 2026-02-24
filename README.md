@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio Profissional – Corretor de Imóveis
 
-## Getting Started
+Aplicação em **Next.js 14 (App Router)** para apresentar o portfólio de um corretor de imóveis, com:
 
-First, run the development server:
+- Site institucional focado em captação de leads
+- Listagem de empreendimentos/imóveis
+- Páginas de detalhes com galeria, mapa e informações completas
+- Área administrativa para gestão de projetos, construtoras e regiões
+
+---
+
+## Tecnologias principais
+
+- [Next.js](https://nextjs.org) (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- PostgreSQL (ou banco compatível com Prisma)
+
+---
+
+## Como rodar o projeto localmente
+
+### 1. Instalar dependências
+
+```bash
+npm install
+```
+
+### 2. Configurar variáveis de ambiente
+
+Use o arquivo `.env.example` como base e crie um `.env` na raiz do projeto:
+
+```bash
+cp .env.example .env
+```
+
+Preencha os valores necessários (ex.: URL do banco de dados).
+
+### 3. Executar migrações do Prisma
+
+```bash
+npx prisma migrate dev
+```
+
+### 4. Rodar o servidor de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse em: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts disponíveis
 
-## Learn More
+No `package.json` você encontra, entre outros:
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` – inicia o servidor de desenvolvimento
+- `npm run build` – gera o build de produção
+- `npm start` – sobe o servidor em modo produção
+- `npm run lint` – executa a análise estática (ESLint)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estrutura geral (alta visão)
 
-## Deploy on Vercel
+Algumas pastas importantes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `app/` – rotas e páginas (públicas e administrativas)
+- `components/` – componentes reutilizáveis (layout, UI, cards, etc.)
+- `lib/` – utilitários, auth e configuração do Prisma
+- `prisma/` – esquema do banco (`schema.prisma`)
+- `public/` – imagens e assets estáticos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Deploy
+
+O projeto pode ser deployado em qualquer plataforma compatível com Next.js (ex.: Vercel, Railway, etc.).
+
+Passos gerais:
+
+1. Configurar variáveis de ambiente na plataforma de deploy
+2. Garantir acesso ao banco de dados
+3. Rodar as migrações do Prisma no ambiente remoto
+4. Executar `npm run build` e iniciar a aplicação
+
+---
+
+## Próximos passos
+
+- Detalhar credenciais e fluxo de acesso da área administrativa
+- Documentar endpoints principais das APIs (`/app/api/*`)
+- Adicionar exemplos de payloads para criação/edição de projetos

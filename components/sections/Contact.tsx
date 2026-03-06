@@ -47,7 +47,7 @@ export function Contact() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 hover:text-white w-full sm:w-auto"
+              className="border-transparent bg-[#25D366] text-white hover:bg-[#20BE5C] hover:text-white w-full sm:w-auto shadow-lg"
             >
               <MessageSquare className="mr-2 h-5 w-5" />
               Chamar no WhatsApp

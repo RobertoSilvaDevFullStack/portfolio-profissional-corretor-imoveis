@@ -11,14 +11,17 @@ export function Hero() {
           <div className="inline-flex w-fit items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-700">
             ★ Especialista em Minha Casa Minha Vida
           </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl xl:text-6xl xl:leading-none">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl xl:text-6xl xl:leading-none">
             Mais do que um corretor,{" "}
-            <span className="text-blue-700">um parceiro</span> no seu sonho.
+            <span className="bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">
+              um parceiro
+            </span>{" "}
+            no seu sonho.
           </h1>
-          <p className="max-w-[600px] text-lg text-slate-500 md:text-xl leading-relaxed">
-            Olá, eu sou o Matheus. Especialista no programa Minha Casa Minha
-            Vida. Ajudar famílias a conquistarem o primeiro imóvel não é apenas
-            meu trabalho, é minha missão pessoal há 6 anos.
+          <p className="max-w-[600px] text-lg text-slate-600 md:text-xl leading-relaxed">
+            Olá, eu sou o Roberto Silva. Especialista no programa Minha Casa
+            Minha Vida. Ajudar famílias a conquistarem o primeiro imóvel não é
+            apenas meu trabalho, é minha missão pessoal há 7 anos.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Button
@@ -34,16 +37,22 @@ export function Hero() {
 
           <div className="mt-8 flex gap-8 border-t border-slate-200 pt-8">
             <div>
-              <p className="text-3xl font-bold text-blue-700">6+</p>
-              <p className="text-sm text-slate-500">Anos de experiência</p>
+              <p className="text-3xl font-bold text-blue-700">7+</p>
+              <p className="text-sm font-medium text-slate-600">
+                Anos de experiência
+              </p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-blue-700">200+</p>
-              <p className="text-sm text-slate-500">Famílias felizes</p>
+              <p className="text-3xl font-bold text-blue-700">250+</p>
+              <p className="text-sm font-medium text-slate-600">
+                Famílias felizes
+              </p>
             </div>
             <div>
               <p className="text-3xl font-bold text-blue-700">SP</p>
-              <p className="text-sm text-slate-500">Especialista local</p>
+              <p className="text-sm font-medium text-slate-600">
+                Especialista local
+              </p>
             </div>
           </div>
         </div>

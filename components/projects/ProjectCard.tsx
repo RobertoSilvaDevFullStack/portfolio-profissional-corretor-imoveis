@@ -16,7 +16,7 @@ interface ProjectCardProps {
     city: string;
     description: string | null;
     status: string;
-    constructor: { name: string; logoUrl: string | null };
+    builder: { name: string; logoUrl: string | null };
     images: { url: string }[];
     priceMin: number | null;
     areaMin: number | null;
@@ -55,11 +55,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Constructor Logo (if exists) */}
-        {project.constructor?.logoUrl && (
+        {project.builder?.logoUrl && (
           <div className="absolute top-4 right-4 h-8 w-20 bg-white/90 rounded px-2 flex items-center justify-center shadow-sm">
             {/* Note: In real implementation, render constructor logo here */}
             <span className="text-[10px] font-bold text-slate-600 truncate">
-              {project.constructor.name}
+              {project.builder.name}
             </span>
           </div>
         )}

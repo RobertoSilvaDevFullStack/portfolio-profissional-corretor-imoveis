@@ -15,7 +15,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       },
       include: {
         region: true,
-        constructor: true,
+        builder: true,
         images: { orderBy: { order: "asc" } },
         floorPlans: { orderBy: { order: "asc" } },
         files: true,
@@ -94,7 +94,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
       },
       include: {
         region: true,
-        constructor: true,
+        builder: true,
         images: { orderBy: { order: "asc" } },
         floorPlans: { orderBy: { order: "asc" } },
         files: true,

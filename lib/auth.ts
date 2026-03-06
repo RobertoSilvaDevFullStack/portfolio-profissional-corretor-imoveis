@@ -61,6 +61,11 @@ export async function createAdminSession(): Promise<string> {
   return token;
 }
 
+export async function destroyAdminSession(): Promise<void> {
+  const cookieStore = await cookies();
+  cookieStore.delete(ADMIN_COOKIE);
+}
+
 export async function isAuthenticated(): Promise<boolean> {
   const cookieStore = await cookies();
   const token = cookieStore.get(ADMIN_COOKIE)?.value;

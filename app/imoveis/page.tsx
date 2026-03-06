@@ -27,7 +27,7 @@ export default async function ProjectsPage({ searchParams }: PageProps) {
       where,
       include: {
         region: true,
-        constructor: true,
+        builder: true,
         images: { where: { isHero: true }, take: 1 },
       },
       orderBy: { featured: "desc" },

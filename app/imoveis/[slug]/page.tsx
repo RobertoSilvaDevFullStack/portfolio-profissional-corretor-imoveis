@@ -32,7 +32,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     where: { slug },
     include: {
       region: true,
-      constructor: true,
+      builder: true,
       images: { orderBy: { order: "asc" } },
       floorPlans: { orderBy: { order: "asc" } },
       files: true,
@@ -113,11 +113,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                       /{project.state}
                     </div>
                   </div>
-                  {project.constructor.logoUrl && (
+                  {project.builder.logoUrl && (
                     <div className="h-12 w-24 relative">
                       <Image
-                        src={project.constructor.logoUrl}
-                        alt={project.constructor.name}
+                        src={project.builder.logoUrl}
+                        alt={project.builder.name}
                         fill
                         className="object-contain"
                       />
@@ -336,8 +336,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <div className="space-y-3">
                   <a
                     href={`https://wa.me/55${
-                      project.constructor.phone?.replace(/\D/g, "") ||
-                      "11999999999" // Fallback to provided phone or default
+                      project.builder.phone?.replace(/\D/g, "") || "11999999999" // Fallback to provided phone or default
                     }?text=Olá, gostaria de mais informações sobre o ${project.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -361,7 +360,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     <div>
                       <p className="text-xs text-slate-500">Construtora</p>
                       <p className="font-bold text-slate-900">
-                        {project.constructor.name}
+                        {project.builder.name}
                       </p>
                     </div>
                   </div>

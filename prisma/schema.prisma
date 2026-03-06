@@ -22,54 +22,54 @@ model Region {
 }
 
 model Constructor {
-  id       String    @id @default(cuid())
-  name     String
-  slug     String    @unique
-  logoUrl  String?
-  phone    String?
-  email    String?
-  projects Project[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  logoUrl   String?
+  phone     String?
+  email     String?
+  projects  Project[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
 model Project {
-  id            String   @id @default(cuid())
-  name          String
-  slug          String   @unique
-  code          String?
-  type          String   @default("Residencial")
+  id   String  @id @default(cuid())
+  name String
+  slug String  @unique
+  code String?
+  type String  @default("Residencial")
 
   // Location
-  address       String
-  neighborhood  String
-  city          String   @default("São Paulo")
-  state         String   @default("SP")
-  zipCode       String?
-  latitude      Float?
-  longitude     Float?
+  address      String
+  neighborhood String
+  city         String  @default("São Paulo")
+  state        String  @default("SP")
+  zipCode      String?
+  latitude     Float?
+  longitude    Float?
 
   // Description
-  description   String?
-  websiteUrl    String?
+  description String?
+  websiteUrl  String?
 
   // Characteristics
-  areaMin       Float?
-  areaMax       Float?
-  priceMin      Float?
-  pricePerSqm   Float?
-  bedrooms      Int?
-  bedroomsMax   Int?
-  suites        Int?
-  bathrooms     Int?
-  parkingSpots  Int?
+  areaMin      Float?
+  areaMax      Float?
+  priceMin     Float?
+  pricePerSqm  Float?
+  bedrooms     Int?
+  bedroomsMax  Int?
+  suites       Int?
+  bathrooms    Int?
+  parkingSpots Int?
 
   // Features (stored as JSON arrays)
   condoFeatures String[]
   unitFeatures  String[]
 
   // Project Info
-  status        String   @default("Em Construção")
+  status        String    @default("Em Construção")
   stage         String?
   stock         Int?
   launchDate    DateTime?
@@ -83,21 +83,21 @@ model Project {
   iptu          Float?
 
   // Flags
-  featured      Boolean  @default(false)
-  published     Boolean  @default(true)
+  featured  Boolean @default(false)
+  published Boolean @default(true)
 
   // Relations
   regionId      String
-  region        Region       @relation(fields: [regionId], references: [id])
+  region        Region         @relation(fields: [regionId], references: [id])
   constructorId String
-  constructor   Constructor  @relation(fields: [constructorId], references: [id])
+  builder       Constructor    @relation(fields: [constructorId], references: [id])
   images        ProjectImage[]
   floorPlans    FloorPlan[]
   files         ProjectFile[]
   typologies    Typology[]
 
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([regionId])
   @@index([constructorId])

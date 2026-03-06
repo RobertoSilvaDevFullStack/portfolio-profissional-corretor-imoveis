@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true, // For quicker caching in dev environments, allow build to proceed
   },
-  /* eslint config removed to fix type error */
   images: {
     remotePatterns: [
       {

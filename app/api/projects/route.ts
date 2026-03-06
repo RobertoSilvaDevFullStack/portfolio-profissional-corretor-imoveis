@@ -32,9 +32,7 @@ export async function GET(request: NextRequest) {
         where,
         include: {
           region: { select: { id: true, name: true, slug: true } },
-          constructor: {
-            select: { id: true, name: true, slug: true, logoUrl: true },
-          },
+          builder: true,
           images: {
             where: { isHero: true },
             take: 1,
@@ -114,7 +112,7 @@ export async function POST(request: NextRequest) {
       },
       include: {
         region: true,
-        constructor: true,
+        builder: true,
         images: true,
         floorPlans: true,
         files: true,

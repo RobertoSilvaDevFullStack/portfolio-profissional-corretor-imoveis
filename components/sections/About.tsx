@@ -7,11 +7,11 @@ export function About() {
         <p className="mb-4 text-xs font-bold uppercase tracking-widest text-blue-700">
           Minha História
         </p>
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
           Por que faço o que faço
         </h2>
 
-        <div className="mt-8 space-y-6 text-lg text-slate-500 leading-relaxed">
+        <div className="mt-8 space-y-6 text-lg text-slate-600 leading-relaxed">
           <p>
             Minha jornada no mercado imobiliário começou com um propósito muito
             claro: ajudar pessoas comuns a conquistarem algo extraordinário — o
@@ -28,7 +28,7 @@ export function About() {
             em confiança.
           </p>
 
-          <blockquote className="border-l-4 border-blue-700 pl-6 italic text-white">
+          <blockquote className="border-l-4 border-blue-700 pl-6 italic text-slate-900 font-medium">
             &ldquo;Mais do que vender imóveis, sempre acreditei em construir
             histórias.&rdquo;
           </blockquote>
@@ -55,7 +55,7 @@ export function About() {
             com o seu sonho.
           </p>
 
-          <p className="font-medium text-white">
+          <p className="font-semibold text-slate-900">
             Hoje, continuo movido pelo mesmo propósito do primeiro dia — ajudar
             pessoas a transformarem o sonho da casa própria em realidade.
           </p>

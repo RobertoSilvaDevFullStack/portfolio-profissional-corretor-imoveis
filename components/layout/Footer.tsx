@@ -9,10 +9,10 @@ export function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-700 text-white text-sm font-bold">
-                M
+                RS
               </div>
               <span className="font-serif text-xl font-bold text-slate-900">
-                Matheus<span className="text-blue-700">Imóveis</span>
+                Roberto<span className="text-blue-700"> Imóveis</span>
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-slate-500 leading-relaxed">
@@ -59,21 +59,21 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-bold text-slate-900">Contato</h3>
             <div className="flex flex-col gap-3 text-sm text-slate-500">
               <a
-                href="tel:+5511999999999"
+                href="tel:+5511910835843"
                 className="hover:text-blue-700 transition-colors"
               >
-                (11) 99999-9999
+                (11) 91083-5843
               </a>
               <a
-                href="mailto:contato@matheus.com.br"
+                href="mailto:[EMAIL_ADDRESS]"
                 className="hover:text-blue-700 transition-colors"
               >
-                contato@matheus.com.br
+                robertosilva.comercial@gmail.com
               </a>
             </div>
             <div className="mt-4 flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/robertosilvabroker/"
                 className="text-slate-400 hover:text-blue-700 transition-colors"
                 aria-label="Instagram"
               >
@@ -86,7 +86,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/bayitbrokers/"
                 className="text-slate-400 hover:text-blue-700 transition-colors"
                 aria-label="Facebook"
               >
@@ -99,7 +99,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/roberto-silva-dev-full-stack/"
                 className="text-slate-400 hover:text-blue-700 transition-colors"
                 aria-label="LinkedIn"
               >
@@ -116,8 +116,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-slate-100 pt-8 text-center text-sm text-slate-400">
-          <p>© 2026 Matheus Imóveis. Todos os direitos reservados.</p>
-          <p className="mt-1">CRECI 123456-F</p>
+          <p>© 2026 Roberto Imóveis. Todos os direitos reservados.</p>
+          <p className="mt-1">CRECI 238330-F</p>
         </div>
       </div>
     </footer>
